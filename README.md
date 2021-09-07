@@ -9,9 +9,11 @@ Automatic transcription with punctuation
 - ffmpeg
 - PunkProse API token (optional)
 
-To install:
+### Installation
 
 ```
+git clone https://github.com/CollectivaT-dev/autotranscribe.git
+cd autotranscribe
 pip install -r requirements.txt
 ```
 
@@ -23,7 +25,7 @@ Determine the language code:
 - `en`: English
 - `tr`: Turkish
 
-Simple call:
+Simple run:
 ```
 python autotranscribe.py -i <audio_path> -l <lang-code>
 ```
@@ -38,20 +40,22 @@ Custom model path:
 python autotranscribe.py -i <audio_path> -m <model_path>
 ```
 
-### Other parameters
+Specify output path:
+```
+python autotranscribe.py -i <audio_path> -m <model_path> -o <output_path>
+```
 
+Usage:
 ```
 python autotranscribe.py -h
 ```
 
+### Sample run
+
 ```
--i AUDIO, --audio AUDIO	Input audio path
--l LANG,  --lang  LANG  Language (optional if model path is given and no punctuation is desired)
--m MODEL, --model MODEL	Model path (optional)
--o OUT,   --out   OUT   Output path (optional)
--t TOKEN, --token TOKEN	PunkProse token if sending to remote API (optional)
+python autotranscribe.py -i sample/hello.wav -l en 
 ```
 
 ### Post-editing on oTranscribe
 
-ASR makes errors. If you want to post-edit the output, go to [otranscribe.com](https://otranscribe.com/), load your audio file and then import one of the template files with the extension `.otr`. 
+Automatic speech recognition (ASR) makes errors. If you want to do post-editing on the output, go to [otranscribe.com](https://otranscribe.com/), load your audio file and then import one of the template files with the extension `.otr`. 
