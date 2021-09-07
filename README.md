@@ -11,7 +11,9 @@ Automatic transcription with punctuation
 
 To install:
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 ### Usage
 
